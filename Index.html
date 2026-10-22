@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinco meses y lo que aún falta 💗</title>
+
+  <style>
+
+    .foto-mes {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 12px auto;
+  box-sizing: border-box;
+}
+
+:root {
+  --fondo: #D4E2D3;
+  --vino: #355746;
+  --rosa: #587A62;
+  --texto: #293C32;
+  --tarjeta: #F8F5EC;
+}
+
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    header {
+      padding: 18px;
+      text-align: center;
+      letter-spacing: 3px;
+      color: var(--rosa);
+      border-bottom: 1px solid #ffffff15;
+    }
+
+    section {
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .inicio {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at top, #D6BFA7, transparent 65%);
+    }
+
+    .etiqueta {
+      color: var(--rosa);
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 9vw, 65px);
+      line-height: 1.15;
+      max-width: 750px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: var(--rosa);
+      font-size: clamp(28px, 6vw, 40px);
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: var(--rosa);
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .besito {
+      white-space: pre-line;
+      font-family: monospace;
+      font-size: clamp(17px, 4vw, 23px);
+      line-height: 1.45;
+      margin: 12px 0 25px;
+      color: #293C32;
+    }
+
+    .subtitulo {
+      max-width: 520px;
+      color: #293C32;
+      margin-bottom: 28px;
+    }
+
+    .boton {
+      background: var(--vino);
+      color: white;
+      border: 1px solid var(--rosa);
+      border-radius: 30px;
+      padding: 12px 25px;
+      margin: 8px;
+      transition: 0.3s;
+    }
+
+    .boton:hover {
+      background: #91294e;
+      transform: translateY(-2px);
+    }
+
+    .corazon {
+      color: var(--rosa);
+      font-size: 30px;
+      animation: latir 1.5s infinite;
+    }
+
+    @keyframes latir {
+      50% { transform: scale(1.18); }
+    }
+
+    .contenedor {
+      width: min(650px, 100%);
+      margin: auto;
+    }
+
+    .recuerdo {
+      text-align: left;
+      background: var(--tarjeta);
+      border: 1px solid #e8a0b825;
+      border-left: 3px solid var(--rosa);
+      padding: 22px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .numero {
+      color: var(--rosa);
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .fecha {
+      color: #d5a6b7;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .carta-seccion {
+      background: linear-gradient(#d9b6c3, transparent);
+    }
+
+    .instruccion {
+      color: #d9b6c3;
+      font-size: 14px;
+    }
+
+    .sobre {
+      width: min(310px, 90%);
+      height: 190px;
+      margin: 50px auto 35px;
+      position: relative;
+      background: #9e3458;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 12px 35px #0006;
+      perspective: 800px;
+    }
+
+    .sobre::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #bd5678;
+      clip-path: polygon(0 0, 50% 58%, 100% 0);
+      transform-origin: top;
+      transition: transform 0.7s;
+      z-index: 3;
+    }
+
+    .sobre::after {
+      content: "♡";
+      position: absolute;
+      top: 65px;
+      left: 0;
+      right: 0;
+      font-size: 42px;
+      z-index: 4;
+      color: white;
+    }
+
+    .sobre.abierto::before {
+      transform: rotateX(180deg);
+      z-index: 0;
+    }
+
+    .papel {
+      position: absolute;
+      top: 10px;
+      left: 8%;
+      width: 84%;
+      height: 120px;
+      padding: 20px 10px;
+      color: #6f1837;
+      background: #fff0f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.7s;
+      font-size: 14px;
+    }
+
+    
+.sobre {
+  width: min(310px, 90%);
+  height: 190px;
+  margin: 50px auto 35px;
+  position: relative;
+  background: #9e3458;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 12px 35px #0006;
+  perspective: 800px;
+  isolation: isolate;
+}
+
+.papel {
+  position: absolute;
+  top: 10px;
+  left: 8%;
+  width: 84%;
+  height: 120px;
+  padding: 10px;
+  color: #6f1837;
+  background: #fff0f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.7s;
+  font-size: 14px;
+  z-index: 1;
+}
+
+/* Frente del sobre: tapa el papel */
+.sobre .frente {
+  position: absolute;
+  inset: 0;
+  background: #9e3458;
+  clip-path: polygon(
+    0 42%,
+    50% 78%,
+    100% 42%,
+    100% 100%,
+    0 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Solapa superior */
+.sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #bd5678;
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  transform-origin: top;
+  transition: transform 0.7s;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Corazón */
+.sobre::after {
+  content: "♡";
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  font-size: 42px;
+  color: white;
+  text-align: center;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Al abrir */
+.sobre.abierto::before {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.sobre.abierto .papel {
+  transform: translateY(-105px);
+  z-index: 4;
+}
+
+.sobre.abierto .frente {
+  z-index: 2;
+}
+
+
+    .carta {
+      display: none;
+      text-align: left;
+      background:#fff0f4;
+      color: #512033;
+      padding: 28px;
+      border-radius: 12px;
+      margin: 30px auto;
+      box-shadow: 0 10px 30px #0004;
+      white-space: pre-line;
+      animation: aparecer 0.8s ease;
+    }
+
+    .carta.visible {
+      display: block;
+    }
+
+    .firma {
+      color: #8c2850;
+      text-align: right;
+      margin-top: 25px;
+    }
+
+    .sorpresa {
+      display: none;
+      background: var(--tarjeta);
+      padding: 30px 22px;
+      border-radius: 15px;
+      margin: 25px auto;
+      border: 1px solid #e8a0b855;
+      animation: aparecer 1s ease;
+    }
+
+    .sorpresa.visible {
+      display: block;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      padding: 30px 15px;
+      text-align: center;
+      color: #d4a6b7;
+      border-top: 1px solid #ffffff15;
+      font-size: 13px;
+    }
+
+    .decoracion {
+      color: var(--rosa);
+      font-size: 23px;
+      margin: 15px;
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 60px 18px;
+      }
+
+      .recuerdo {
+        padding: 18px;
+      }
+
+      .carta {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <audio id="musica" loop>
+    <source src="M%C3%BAsica/Mu.mp3" type="audio/mpeg">
+  </audio>
+
+<button class="boton" onclick="reproducirMusica()">
+♫ Toca antes de empezar 💗
+</button>
+  
+  <header>
+    PARA NOSOTROS ♡
+  </header>
+
+
+  <!-- INICIO -->
+  <section class="inicio">
+    <p class="etiqueta">UNA PEQUEÑA HISTORIA DE AMOR</p>
+
+    <h1>Cinco meses y lo que aún falta por escribir~</h1>
+
+    <div class="besito">
+
+ 　 ∧∧  ∩∩ 💕
+(　　) 　)
+/ 　 つ　＼
+（　〇　) 〇 )
+
+    <p class="subtitulo">
+      Cinco meses de nosotros, de momentos que guardo en mi corazón
+      y de una historia que todavía tiene mucho por escribir.
+    </p>
+
+    <div class="corazon">♡</div>
+
+      
+    <button class="boton" onclick="irA('recuerdos')">
+      Una linea de tiempo que te gustara 💗 ↓
+    </button>
+  </section>
+
+  
+  <!-- LÍNEA DEL TIEMPO -->
+  <section id="recuerdos">
+    <p class="etiqueta">CAPÍTULO I</p>
+    <h2>Mis mejores meses contigo.</h2>
+
+    <p class="subtitulo">
+      Cada momento contigo tiene un lugar especial en mi corazón.
+      Aquí quiero guardar algunos de nuestros capítulos.
+    </p>
+
+    <div class="contenedor">
+
+      <article class="recuerdo">
+        <p class="numero">Un comienzo</p>
+        <h3>5/22/2026 ♡</h3>
+ <img src="Fotos/Foto2.jpg" class="foto-mes" alt="Nuestra primera foto">       <p>
+          No tengo palabras para describir lo que sentí en el momento de esa confesión, aquel 22 de mayo. Sé que no fue como lo hubieras deseado, pero fue la mejor confesión que pude tener. Podría decir que fue la primera oficialmente, sin que me pusiera los ojos en blanco o que todo quedara en una pantalla.
+
+          Sé que tuve mis dudas antes de decir que sí, pero ese «seamos un desastre juntos» fue la mejor frase que pude decir. ❤️
+
+          Te amo. 💗
+        </p>
+        
+      </article>
+
+      <article class="recuerdo">
+        <p class="numero">01 · Primer Mes</p>
+        <h3>6/23/2026 ♡</h3>
+      <img src="Fotos/foto1.jpg" class="foto-mes" alt="Nuestra foto">
+        <p class="fecha">Un día para recordar</p>
+        <p>
+          A ver, aclaremos algo: ¿puedo decir que nuestro primer aniversario fue lo mejor? Porque, para mí, sí lo fue. Nos mandamos videos de las oruguitas porque pensamos igual, jijiji, y pasamos un buen rato juntos hablando del pasado y a la vez poniéndonos al día.
+
+          Pero también recordando tu frase: «Creo que este era nuestro momento de estar juntos», frase que antes cuestionaba mucho de ti, pero ahora le encuentro mucho sentido después de pasar el tiempo. Y cómo olvidar lo más importante de ese mes: aunque no fue en nuestro aniversario, siempre recordaré ese ramo de Wattwels de aquel 6 de junio. 🌷💐❤️
+        </p>
+      </article>
+
+      <article class="recuerdo">
+        <p class="numero">02 · Segundo Mes</p>
+        <h3>7/23/2026 ♡</h3>
+       <img src="Fotos/foto3.jpg" class="foto-mes" alt="Nuestra foto">
+        <p class="fecha">Nuestra historia tiene puntos, pero siempre seguirá</p>
+        <p>
+          A ver, sé que en nuestro segundo mes la cagué, y en grande, cambiando tus planes. Es algo que ya aprendí que no debo hacer, lo sé. Pero también sé que aprendí algo ese día: no llevar a la chamaca en días importantes o, mejor dicho, no mezclar mis amistades con mi relación. Una moraleja que me va a quedar para siempre.
+
+          Sé que no pude darte mucho ese día, pero me dejó una lección y me hizo darme cuenta de algo: que, aunque tenga dudas y preocupaciones muy seguido, tú vas a seguir tomándome de la mano. Y lo más bonito es que, incluso cuando te cansas, no me la sueltas. 🥹❤️
+
+          Por eso te lo agradezco muchísimo. Gracias por seguir conmigo, por tenerme paciencia y por esperar a que cambie por decisión propia, a que aprenda de mis errores y me convierta en alguien mejor cada día. No quiero cambiar solamente por ti, sino también por mí y por lo nuestro.
+
+          Pero hay algo de lo que sí estoy segura, y es que te amo hoy, mañana y siempre. 💗🫂
+        </p>
+      </article>
+
+      <article class="recuerdo">
+        <p class="numero">03 · Tercer Mes</p>
+        <h3>8/23/2026 ♡</h3>
+       <img src="Fotos/foto4.jpg" class="foto-mes" alt="Nuestra foto">
+       <img src="Fotos/foto5.jpg" class="foto-mes" alt="Nuestra foto">
+        <p class="fecha">Un día sin caduccion</p>
+        <p>
+          Sé que ese aniversario se festejó más el 15 de agosto, con las pintacaritas, el festival, los brazaletes, buscando el regalo de Ma que al final no le gustó JAJAJA, y ese juego de pool. 😭💗
+
+          Pero me alegro mucho de haber vivido ese día y también el de nuestro aniversario, cuando te dibujé el rostro y tú me hiciste una carta que se rompió. :( Aunque sea un poquis, JAJAJA. En serio, no sé cómo terminó ahí, amol. 😭💗
+
+          Pero ese día fue genial porque lo viví contigo, y eso es lo que más importa para mí. 🐻‍❄️💗
+        </p>
+      </article>
+
+      <!-- CUARTO MES -->
+      <article class="recuerdo">
+        <p class="numero">04 · Cuarto Mes</p>
+        <h3>9/23/2026 ♡</h3>
+        <img src="Fotos/foto6.jpg" class="foto-mes" alt="Nuestra foto">
+       <img src="Fotos/foto7.jpg" class="foto-mes" alt="Nuestra foto">
+        <p class="fecha">No dudaré si me amas.</p>
+        <p>
+
+Sé que dudo mucho, pero es más por lo que me pasó. Aun así, gracias a ti, sé que mis manchas pueden ser tapadas por otras manchas coloridas. 🎨❤️‍🩹
+
+Sé que he estado y estoy bajo presión, que a veces dudo de si yo misma soy lo suficiente para ti. Como aquella vez que me enfermé y solo pude darte un dibujo y una colonia, mientras tú me diste una caja con un montón de cosas y un una hoja de 1000 razones cual por eso le dijiste adíos tu muñeca  para amarte, que seguro tengo que terminar hoy....
+
+Pero, como tú dijiste, no se trata de merecer, de alcanzar o de quién tiene el mejor regalo. Gracias a Dios, porque si se tratara de eso, tú ganarías siempre. JAJAJA. 🧸💗
+
+Se trata de recordarnos cuánto nos amamos cada mes, cada semana, cada día, cada minuto, cada segundo o, mejor dicho, cada vez que late mi corazón, porque quiero que cada palpitar sea tuyo. ❤️‍🩹💗
+        </p>
+      </article>
+
+      <!-- QUINTO MES -->
+      <article class="recuerdo">
+        <p class="numero">05 · Quinto Mes</p>
+        <h3>10/23/2026 ♡</h3>
+        <img src="Fotos/foto8.jpg" class="foto-mes" alt="Nuestra foto">
+        <p class="fecha">Cinco meses y lo que aún falta por escribir 💌</p>
+        <p>
+          Y bien, ya estamos aquí, terminando nuestra primera página, porque nuestra historia nunca va a terminar. 💗📖
+
+Sé que ya no he sido la misma que al principio, pero tú dijiste que ambos vamos a cambiar, y eso es algo bueno. Sé que me siento abrumada, pero es que, como te dije aquella noche, no quiero que caigamos en una rutina. Y para evitarlo, tengo que ponerme en acción por nuestro propio bien, porque quiero que sigamos creando recuerdos, viviendo nuevas experiencias y enamorándonos el uno del otro una y otra vez...pero con nuestro propio ritmo lose
+
+por que ese "ya no estas sola" me hizo poder descanzar de mi carga y te lo agradezco, ¿y qué más? bueno algo que quiero decir. Sé que lo de mudarte conmigo puede ser impactante, o quizá ni siquiera sea algo que desees por ahora, y está bien. No quiero que sientas presión, porque sé que todavía tenemos mucho por vivir y construir juntos.
+
+Pero quiero que sepas algo: hoy, mañana y siempre estaré contigo, abrazándote, amándote y recordándote que, sin importar cuántas páginas nos falten por escribir, quiero seguir escribiéndolas a tu lado. Porque esto no es un final, amol, sino el comienzo de todo lo que todavía nos queda por vivir. ❤️‍🩹💗🐻‍❄️
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CARTA DE AMOR -->
+  <section class="carta-seccion" id="carta-amor">
+    <p class="etiqueta">CAPÍTULO II</p>
+    <h2>Una carta para ti 💌</h2>
+
+    <p class="subtitulo">
+      Hay cosas que a veces no sé cómo decirte, así que las guardé aquí.
+    </p>
+
+    <p class="instruccion">
+      Toca el sobre para abrirlo, mi amor.
+    </p>
+
+    <div
+      class="sobre"
+      id="sobre"
+      role="button"
+      tabindex="0"
+      aria-label="Abrir la carta de amor"
+      aria-expanded="false"
+      onclick="alternarCarta()"
+      onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault();alternarCarta();}"
+    >
+      <div class="papel">
+  <strong>Para mi persona favorita</strong>
+  <span>Con todo mi amor ♡</span>
+</div>
+
+<div class="frente"></div>
+    </div>
+
+    <button class="boton" onclick="alternarCarta()">
+      Abrir / cerrar carta 💗
+    </button>
+
+    <article class="carta" id="carta">
+      Mi amor, hoy te escribo esta carta como recordatorio de que cumplimos cinco meses de relación. Cinco meses llenos de recuerdos, aprendizajes, momentos bonitos y también errores que nos han ayudado a crecer.
+
+Sé que no todo ha sido perfecto y que todavía tengo muchas cosas por mejorar, pero quiero que sepas que mi intención es seguir construyendo algo bonito contigo. No quiero que lo nuestro se convierta en una rutina, quiero que sigamos sorprendiéndonos, enamorándonos y creando recuerdos que algún día podamos mirar con una sonrisa.
+
+Gracias por estos cinco meses, por formar parte de mi vida y por cada momento que hemos compartido. Aún nos queda muchísimo por vivir, aprender y escribir juntos.
+
+Feliz quinto mes, mi vida. Esta no es una despedida, sino un recordatorio de que nuestra historia continúa y que todavía nos quedan muchas páginas por escribir juntos. Te amo.
+      <div class="firma">
+        Para: Esposito<br>
+   Att: Tu esposa, que te ama. ♡
+      </div>
+    </article>
+  </section>
+
+  <!-- SORPRESA FINAL -->
+  <section id="final">
+    <p class="etiqueta">CAPÍTULO III</p>
+    <h2>Y todavía falta... ♡</h2>
+
+    <p class="subtitulo">
+      Cinco meses son solo el comienzo de todos los recuerdos
+      que aún nos esperan.
+    </p>
+
+    <button class="boton" id="botonSorpresa" onclick="mostrarSorpresa()">
+      Tengo algo más para ti 🎁
+    </button>
+
+    <article class="sorpresa" id="sorpresa">
+      <div class="corazon">♡</div>
+
+      <h2>Mi deseo para nosotros</h2>
+
+      <p>
+        Si pudiera pedir un deseo, sería que la vida nos regalara
+        muchísimos momentos bonitos más.
+      </p>
+
+      <p>
+        Que nunca nos falten razones para sonreír, abrazos que
+        nos hagan sentir en casa y ganas de seguir escribiendo
+        nuestra historia.
+      </p>
+
+      <p>
+        <strong>
+          Felices cinco meses y que nos quede muchísimo por vivir. 💗
+        </strong>
+      </p>
+
+      <div class="decoracion">♡ ∞ ♡</div>
+
+      <p>Muah... 💋💓</p>
+    </article>
+  </section>
+
+  <footer>
+    Hecho con amor, pensando en ti ♡
+    <br>
+    Cinco meses y lo que aún falta...
+  </footer>
+  <script>
+
+
+function reproducirMusica() {
+  const musica = document.getElementById("musica");
+
+  musica.play().catch(function(error) {
+    alert("No se pudo reproducir la música. Revisa el archivo Mu.mp3.");
+  });
+}
+
+    
+    function irA(id) {
+      const elemento = document.getElementById(id);
+
+      if (elemento) {
+        elemento.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    }
+
+    function alternarCarta() {
+      const sobre = document.getElementById("sobre");
+      const carta = document.getElementById("carta");
+
+      const abierta = carta.classList.toggle("visible");
+
+      sobre.classList.toggle("abierto", abierta);
+      sobre.setAttribute("aria-expanded", String(abierta));
+    }
+
+    function mostrarSorpresa() {
+      const sorpresa = document.getElementById("sorpresa");
+      const boton = document.getElementById("botonSorpresa");
+
+      const visible = sorpresa.classList.toggle("visible");
+
+      boton.textContent = visible
+        ? "Cerrar mi sorpresa 💗"
+        : "Tengo algo más para ti 🎁";
+
+      if (visible) {
+        setTimeout(function () {
+          sorpresa.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }, 100);
+      }
+    }
+  </script>
+
+</body>
+</html>
